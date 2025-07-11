@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('original_url', 2048);
             $table->string('short_code', 10)->unique();
+            $table->string('created_by_ip', 10)->unique();
             $table->string('custom_code', 50)->nullable()->unique();
             $table->timestamp('expires_at')->nullable();
             $table->unsignedBigInteger('click_count')->default(0);
